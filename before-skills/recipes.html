@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Food Recipes</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #faf7f2;
+      color: #333;
+    }
+
+    header {
+      background: #c0392b;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    header p { font-size: 1.1rem; opacity: 0.9; }
+
+    .container {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    }
+
+    .card-emoji {
+      font-size: 4rem;
+      text-align: center;
+      padding: 1.5rem 0 0.5rem;
+      background: #fff5f5;
+    }
+
+    .card-body { padding: 1.2rem 1.4rem 1.4rem; }
+
+    .card-body h2 {
+      font-size: 1.2rem;
+      color: #c0392b;
+      margin-bottom: 0.3rem;
+    }
+
+    .meta {
+      display: flex;
+      gap: 1rem;
+      font-size: 0.82rem;
+      color: #888;
+      margin-bottom: 0.8rem;
+    }
+
+    .meta span::before { margin-right: 3px; }
+
+    .description {
+      font-size: 0.92rem;
+      color: #555;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    details { border-top: 1px solid #eee; padding-top: 0.8rem; }
+
+    summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: #c0392b;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    summary::after { content: '▼'; font-size: 0.7rem; }
+    details[open] summary::after { content: '▲'; }
+
+    .ingredients, .steps {
+      margin-top: 0.8rem;
+      font-size: 0.88rem;
+      color: #444;
+    }
+
+    .ingredients ul { padding-left: 1.2rem; }
+    .ingredients li { margin-bottom: 0.25rem; }
+
+    .steps ol { padding-left: 1.4rem; }
+    .steps li { margin-bottom: 0.4rem; line-height: 1.45; }
+
+    .steps { margin-top: 0.6rem; }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #aaa;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>🍽️ Recipe Collection</h1>
+  <p>10 delicious recipes from around the world</p>
+</header>
+
+<div class="container">
+  <div class="grid">
+
+    <!-- Recipe 1 -->
+    <div class="card">
+      <div class="card-emoji">🍝</div>
+      <div class="card-body">
+        <h2>Spaghetti Bolognese</h2>
+        <div class="meta">
+          <span>⏱ 45 min</span>
+          <span>👥 4 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">A hearty Italian meat sauce slow-cooked with tomatoes and aromatics over al dente spaghetti.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>400g spaghetti</li>
+              <li>500g ground beef</li>
+              <li>1 onion, diced</li>
+              <li>3 garlic cloves, minced</li>
+              <li>400g crushed tomatoes</li>
+              <li>2 tbsp tomato paste</li>
+              <li>1 tsp dried oregano</li>
+              <li>Salt, pepper, olive oil</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Sauté onion and garlic in olive oil until soft.</li>
+              <li>Add ground beef and brown well.</li>
+              <li>Stir in tomato paste, crushed tomatoes, and oregano.</li>
+              <li>Simmer on low for 25 minutes, season to taste.</li>
+              <li>Cook spaghetti per package directions; serve with sauce.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 2 -->
+    <div class="card">
+      <div class="card-emoji">🍗</div>
+      <div class="card-body">
+        <h2>Butter Chicken</h2>
+        <div class="meta">
+          <span>⏱ 50 min</span>
+          <span>👥 4 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">Tender chicken in a rich, creamy tomato-based curry sauce with warming Indian spices.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>700g chicken thighs, cubed</li>
+              <li>1 cup plain yogurt</li>
+              <li>2 tsp garam masala</li>
+              <li>1 tsp turmeric</li>
+              <li>400g crushed tomatoes</li>
+              <li>1 cup heavy cream</li>
+              <li>3 tbsp butter</li>
+              <li>1 onion, 4 garlic cloves, 1-inch ginger</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Marinate chicken in yogurt, half the garam masala, and turmeric for 30 min.</li>
+              <li>Sear chicken in butter until lightly charred; set aside.</li>
+              <li>Sauté onion, garlic, and ginger; add remaining spices.</li>
+              <li>Add tomatoes; simmer 10 min, then blend sauce until smooth.</li>
+              <li>Return chicken to sauce, stir in cream, and simmer 10 min.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 3 -->
+    <div class="card">
+      <div class="card-emoji">🥗</div>
+      <div class="card-body">
+        <h2>Greek Salad</h2>
+        <div class="meta">
+          <span>⏱ 10 min</span>
+          <span>👥 2 servings</span>
+          <span>🟢 Easy</span>
+        </div>
+        <p class="description">A refreshing Mediterranean salad with crisp vegetables, olives, and creamy feta cheese.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>2 large tomatoes, chopped</li>
+              <li>1 cucumber, sliced</li>
+              <li>1 red onion, thinly sliced</li>
+              <li>½ cup kalamata olives</li>
+              <li>150g feta cheese, crumbled</li>
+              <li>3 tbsp olive oil</li>
+              <li>1 tbsp red wine vinegar</li>
+              <li>1 tsp dried oregano</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Combine tomatoes, cucumber, onion, and olives in a large bowl.</li>
+              <li>Whisk together olive oil, vinegar, and oregano.</li>
+              <li>Drizzle dressing over salad and toss gently.</li>
+              <li>Top with feta cheese and serve immediately.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 4 -->
+    <div class="card">
+      <div class="card-emoji">🍜</div>
+      <div class="card-body">
+        <h2>Chicken Ramen</h2>
+        <div class="meta">
+          <span>⏱ 40 min</span>
+          <span>👥 2 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">A warming Japanese noodle soup with a savory broth, soft-boiled egg, and tender chicken.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>2 packs ramen noodles</li>
+              <li>2 chicken breasts</li>
+              <li>4 cups chicken broth</li>
+              <li>3 tbsp soy sauce</li>
+              <li>1 tbsp miso paste</li>
+              <li>2 soft-boiled eggs</li>
+              <li>2 green onions, sliced</li>
+              <li>1 tsp sesame oil, nori sheets</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Simmer chicken breasts in broth 20 min; remove and slice.</li>
+              <li>Whisk miso paste and soy sauce into broth; add sesame oil.</li>
+              <li>Cook ramen noodles per package directions.</li>
+              <li>Divide noodles into bowls, ladle hot broth over them.</li>
+              <li>Top with sliced chicken, halved soft-boiled egg, green onions, and nori.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 5 -->
+    <div class="card">
+      <div class="card-emoji">🌮</div>
+      <div class="card-body">
+        <h2>Beef Tacos</h2>
+        <div class="meta">
+          <span>⏱ 25 min</span>
+          <span>👥 4 servings</span>
+          <span>🟢 Easy</span>
+        </div>
+        <p class="description">Crispy or soft tacos loaded with seasoned ground beef, fresh toppings, and zesty salsa.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>500g ground beef</li>
+              <li>8 taco shells or small tortillas</li>
+              <li>1 tbsp taco seasoning</li>
+              <li>1 cup shredded lettuce</li>
+              <li>1 tomato, diced</li>
+              <li>½ cup shredded cheddar</li>
+              <li>½ cup sour cream</li>
+              <li>Salsa, lime wedges</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Brown ground beef in a skillet over medium-high heat.</li>
+              <li>Drain fat; add taco seasoning and 2 tbsp water.</li>
+              <li>Simmer 3 min until beef is well coated.</li>
+              <li>Warm taco shells per package directions.</li>
+              <li>Fill with beef and top with lettuce, tomato, cheese, sour cream, and salsa.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 6 -->
+    <div class="card">
+      <div class="card-emoji">🍕</div>
+      <div class="card-body">
+        <h2>Margherita Pizza</h2>
+        <div class="meta">
+          <span>⏱ 35 min</span>
+          <span>👥 2 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">A classic Neapolitan pizza topped with tomato sauce, fresh mozzarella, and fragrant basil.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>250g pizza dough</li>
+              <li>½ cup tomato sauce</li>
+              <li>200g fresh mozzarella, sliced</li>
+              <li>Fresh basil leaves</li>
+              <li>2 tbsp olive oil</li>
+              <li>Salt and black pepper</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Preheat oven to 250°C (480°F) with a baking stone or sheet inside.</li>
+              <li>Roll dough into a 30cm circle on a floured surface.</li>
+              <li>Spread tomato sauce, leaving a 2cm border for the crust.</li>
+              <li>Arrange mozzarella slices on top; drizzle with olive oil.</li>
+              <li>Bake 10–12 min until crust is golden. Top with fresh basil.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 7 -->
+    <div class="card">
+      <div class="card-emoji">🥘</div>
+      <div class="card-body">
+        <h2>Vegetable Curry</h2>
+        <div class="meta">
+          <span>⏱ 35 min</span>
+          <span>👥 4 servings</span>
+          <span>🟢 Easy</span>
+        </div>
+        <p class="description">A vibrant, plant-based curry packed with seasonal vegetables in a coconut milk sauce.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>1 can (400ml) coconut milk</li>
+              <li>2 tbsp red curry paste</li>
+              <li>1 zucchini, 1 bell pepper, 1 cup broccoli florets</li>
+              <li>1 can chickpeas, drained</li>
+              <li>1 onion, 3 garlic cloves</li>
+              <li>1 tbsp vegetable oil</li>
+              <li>Salt, lime juice, fresh cilantro</li>
+              <li>Cooked rice, to serve</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Sauté onion and garlic in oil over medium heat.</li>
+              <li>Add curry paste and stir 1 min until fragrant.</li>
+              <li>Pour in coconut milk and bring to a gentle simmer.</li>
+              <li>Add all vegetables and chickpeas; cook 15 min until tender.</li>
+              <li>Season with salt and lime juice; serve over rice with cilantro.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 8 -->
+    <div class="card">
+      <div class="card-emoji">🥞</div>
+      <div class="card-body">
+        <h2>Fluffy Pancakes</h2>
+        <div class="meta">
+          <span>⏱ 20 min</span>
+          <span>👥 2 servings</span>
+          <span>🟢 Easy</span>
+        </div>
+        <p class="description">Light and airy American-style pancakes perfect for a weekend breakfast, served with maple syrup.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>1 cup all-purpose flour</li>
+              <li>1 tbsp sugar</li>
+              <li>1 tsp baking powder</li>
+              <li>½ tsp baking soda</li>
+              <li>¾ cup buttermilk</li>
+              <li>1 egg</li>
+              <li>2 tbsp melted butter</li>
+              <li>Maple syrup and fresh berries, to serve</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Whisk together flour, sugar, baking powder, and baking soda.</li>
+              <li>In another bowl, mix buttermilk, egg, and melted butter.</li>
+              <li>Fold wet ingredients into dry until just combined (lumps are fine).</li>
+              <li>Heat a non-stick pan over medium; pour ¼ cup batter per pancake.</li>
+              <li>Cook until bubbles form (~2 min), flip, and cook 1 min more. Serve with syrup.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 9 -->
+    <div class="card">
+      <div class="card-emoji">🍲</div>
+      <div class="card-body">
+        <h2>French Onion Soup</h2>
+        <div class="meta">
+          <span>⏱ 1 hr 15 min</span>
+          <span>👥 4 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">A classic French bistro soup with deeply caramelized onions topped with crusty bread and melted Gruyère.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>1kg yellow onions, thinly sliced</li>
+              <li>3 tbsp butter</li>
+              <li>1 tbsp olive oil</li>
+              <li>1 cup dry white wine</li>
+              <li>1 litre beef broth</li>
+              <li>1 tsp fresh thyme</li>
+              <li>4 slices baguette, toasted</li>
+              <li>1½ cups Gruyère cheese, grated</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Melt butter with oil in a large pot; add onions and cook on low 45–50 min, stirring often, until deep golden.</li>
+              <li>Deglaze with white wine; cook until absorbed.</li>
+              <li>Add broth and thyme; simmer 15 min. Season with salt and pepper.</li>
+              <li>Ladle soup into oven-safe bowls; float a baguette slice on top.</li>
+              <li>Cover with Gruyère and broil until bubbly and golden.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+    <!-- Recipe 10 -->
+    <div class="card">
+      <div class="card-emoji">🍫</div>
+      <div class="card-body">
+        <h2>Chocolate Lava Cake</h2>
+        <div class="meta">
+          <span>⏱ 25 min</span>
+          <span>👥 4 servings</span>
+          <span>🟡 Medium</span>
+        </div>
+        <p class="description">Indulgent individual chocolate cakes with a warm, gooey molten center — a restaurant-worthy dessert at home.</p>
+        <details>
+          <summary>View Recipe</summary>
+          <div class="ingredients">
+            <strong>Ingredients</strong>
+            <ul>
+              <li>170g dark chocolate (70%), chopped</li>
+              <li>115g unsalted butter, plus extra for ramekins</li>
+              <li>2 eggs + 2 egg yolks</li>
+              <li>¼ cup sugar</li>
+              <li>2 tbsp all-purpose flour</li>
+              <li>Pinch of salt</li>
+              <li>Cocoa powder, for dusting</li>
+              <li>Vanilla ice cream, to serve</li>
+            </ul>
+          </div>
+          <div class="steps">
+            <strong>Steps</strong>
+            <ol>
+              <li>Preheat oven to 220°C (425°F). Butter and dust 4 ramekins with cocoa.</li>
+              <li>Melt chocolate and butter together; let cool slightly.</li>
+              <li>Whisk eggs, yolks, and sugar until pale; fold in chocolate mixture.</li>
+              <li>Fold in flour and salt until just combined.</li>
+              <li>Divide batter among ramekins; bake 12 min until edges are set but centers jiggle. Serve immediately with ice cream.</li>
+            </ol>
+          </div>
+        </details>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>Recipe Collection &copy; 2026 &mdash; Bon appétit!</p>
+</footer>
+
+</body>
+</html>
