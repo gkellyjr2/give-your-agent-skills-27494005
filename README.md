@@ -4,6 +4,16 @@ This is the repository for the LinkedIn Learning course `Give Your AI Agent Skil
 ![course-name-alt-text][lil-thumbnail-url] 
 
 _See the readme file in the main branch for updated instructions and information._
+
+<p>Skills are a portable way to package instructions, workflows, and supporting assets for AI agents. They help agents perform specialized tasks more consistently and make it easier to reuse expertise across projects and teams.</p><p>In this course, instructor Angie Jones introduces the emerging skills ecosystem and shows you how to find, install, use, create, update, and remove skills using the Skills CLI. Along the way, learn what skills are, how they're structured, and how to design effective skills of your own.</p><p>Whether you're using Claude Code, Codex, Copilot, Goose, or another supporting agent, this course provides a practical foundation for extending AI agents with reusable capabilities and creating skills that can be shared across different environments.</p>
+
+## Learning Objectives
+- Discover and evaluate skills for specific use cases.
+- Install and utilize existing skills to extend an AI agent's capabilities.
+- Assess agent skills using established design principles and best practices.
+- Design and create effective agent skills from scratch.
+- Manage the lifecycle of skills through updates and removal.
+
 ## Instructions
 This repository has branches for each of the videos in the course. You can use the branch pop up menu in github to switch to a specific branch and take a look at the course at that stage, or you can add `/tree/BRANCH_NAME` to the URL to go to the branch you want to access.
 
