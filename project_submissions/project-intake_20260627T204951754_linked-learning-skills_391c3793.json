@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "requestId": "391c3793-069f-4fd3-866d-bd1004b8c7bd",
+  "submittedAt": "2026-06-27T20:49:51.754Z",
+  "source": {
+    "channel": "project-intake-web",
+    "application": "give-your-agent-skills-27494005"
+  },
+  "requestor": {
+    "name": "George Kelly",
+    "email": "gkellyjr2sts@gmail.com",
+    "department": "Information Technology Services",
+    "role": "Project Manager"
+  },
+  "project": {
+    "title": "Linked Learning Skills",
+    "summary": "The following summary represents the project request",
+    "problemStatement": "The following information represents the project statement",
+    "desiredOutcome": "The following information represents the project request",
+    "type": "new-build",
+    "priority": "medium",
+    "timeline": {
+      "desiredStartDate": "2026-08-13",
+      "desiredEndDate": "2026-12-24"
+    },
+    "budget": {
+      "estimateUsd": "35000"
+    },
+    "stakeholders": "Needham Parks",
+    "dependencies": "Various Information Technology Services",
+    "successMetrics": "NCAT Preeminence 2028",
+    "risks": "Haters",
+    "dataSensitivity": "internal",
+    "referenceLink": "",
+    "notes": "Not applicable"
+  }
+}

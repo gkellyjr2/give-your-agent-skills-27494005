@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Review Project Request</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="brand-bar" aria-label="Company branding">
+          <img src="assets/company-logo.svg" alt="LinkedIn Learning Technology Intake logo" class="company-logo" />
+          <p class="brand-tagline">LinkedIn Learning project intake platform</p>
+        </div>
+        <p class="eyebrow">Submission Review</p>
+        <h1>Confirm your request before final submission.</h1>
+        <p class="hero-copy">
+          Review each category below in readable format. You can submit now or
+          return to edit your answers.
+        </p>
+      </section>
+
+      <section class="card" aria-labelledby="review-summary-title">
+        <div class="card-head">
+          <h2 id="review-summary-title">Purpose and Quick Instructions</h2>
+          <p>
+            This page gives you a readable confirmation of every category
+            before the request is stored.
+          </p>
+        </div>
+        <ol class="quick-steps">
+          <li>Review each field value for accuracy and completeness.</li>
+          <li>Select Return to Edit if any value needs correction.</li>
+          <li>Select Submit Request to finalize and open acknowledgment.</li>
+        </ol>
+      </section>
+
+      <section class="card" aria-labelledby="review-title">
+        <div class="card-head">
+          <h2 id="review-title">Request Review</h2>
+          <p>Verify all information is accurate before submitting.</p>
+        </div>
+
+        <div id="review-container" class="review-sections" aria-live="polite"></div>
+
+        <div class="actions">
+          <button id="final-submit" type="button">Submit Request</button>
+          <button id="edit-responses" type="button" class="ghost">Return to Edit</button>
+        </div>
+
+        <p id="review-feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="review.js"></script>
+  </body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Project Intake Request</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="brand-bar" aria-label="Company branding">
+          <img src="assets/company-logo.svg" alt="LinkedIn Learning Technology Intake logo" class="company-logo" />
+          <p class="brand-tagline">LinkedIn Learning project intake platform</p>
+        </div>
+        <p class="eyebrow">Project Intake</p>
+        <h1>Turn project ideas into a scoped request.</h1>
+        <p class="hero-copy">
+          Share what you need, why it matters, and what success should look like.
+          This form captures the details needed for triage and planning.
+        </p>
+        <ul class="hero-points">
+          <li>Fast intake for requestors</li>
+          <li>Structured fields for PM and engineering</li>
+          <li>Review step before final submission</li>
+        </ul>
+      </section>
+
+      <section class="card" aria-labelledby="intake-summary-title">
+        <div class="card-head">
+          <h2 id="intake-summary-title">Purpose and Quick Instructions</h2>
+          <p>
+            This page collects complete project request details so teams can
+            evaluate scope, priority, and delivery readiness.
+          </p>
+        </div>
+        <ol class="quick-steps">
+          <li>Complete all required fields marked with *.</li>
+          <li>Select Preview Submission to validate and move to review.</li>
+          <li>Confirm details on the review page before final submit.</li>
+        </ol>
+      </section>
+
+      <section class="card" aria-labelledby="intake-title">
+        <div class="card-head">
+          <h2 id="intake-title">Request Details</h2>
+          <p>All fields marked with * are required.</p>
+        </div>
+
+        <form id="project-intake-form" novalidate>
+          <fieldset>
+            <legend>Requestor Information</legend>
+            <div class="grid two-col">
+              <label>
+                Full Name *
+                <input name="requestorName" type="text" required />
+              </label>
+              <label>
+                Work Email *
+                <input name="requestorEmail" type="email" required />
+              </label>
+              <label>
+                Department *
+                <input name="department" type="text" required />
+              </label>
+              <label>
+                Role
+                <input name="role" type="text" />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Project Overview</legend>
+            <div class="grid two-col">
+              <label class="full-width">
+                Project Title *
+                <input name="projectTitle" type="text" required />
+              </label>
+              <label class="full-width">
+                Project Summary *
+                <textarea name="projectSummary" rows="3" required></textarea>
+              </label>
+              <label class="full-width">
+                Problem Statement *
+                <textarea name="problemStatement" rows="3" required></textarea>
+              </label>
+              <label class="full-width">
+                Desired Outcome *
+                <textarea name="desiredOutcome" rows="3" required></textarea>
+              </label>
+              <label>
+                Request Type *
+                <select name="requestType" required>
+                  <option value="">Select one</option>
+                  <option value="new-build">New Build</option>
+                  <option value="enhancement">Enhancement</option>
+                  <option value="migration">Migration</option>
+                  <option value="automation">Automation</option>
+                  <option value="research">Discovery / Research</option>
+                </select>
+              </label>
+              <label>
+                Priority *
+                <select name="priority" required>
+                  <option value="">Select one</option>
+                  <option value="critical">Critical</option>
+                  <option value="high">High</option>
+                  <option value="medium">Medium</option>
+                  <option value="low">Low</option>
+                </select>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Timeline and Scope</legend>
+            <div class="grid two-col">
+              <label>
+                Desired Start Date *
+                <input name="startDate" type="date" required />
+              </label>
+              <label>
+                Desired Completion Date *
+                <input name="endDate" type="date" required />
+              </label>
+              <label>
+                Estimated Budget (USD)
+                <input name="budget" type="text" placeholder="e.g. 25000-50000" />
+              </label>
+              <label>
+                Primary Stakeholders
+                <input name="stakeholders" type="text" placeholder="Team or names" />
+              </label>
+              <label class="full-width">
+                Dependencies
+                <textarea
+                  name="dependencies"
+                  rows="2"
+                  placeholder="Systems, vendors, approvals"
+                ></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Success and Risk</legend>
+            <div class="grid two-col">
+              <label class="full-width">
+                Success Metrics *
+                <textarea name="successMetrics" rows="3" required></textarea>
+              </label>
+              <label class="full-width">
+                Key Risks or Constraints
+                <textarea name="risks" rows="3"></textarea>
+              </label>
+              <label>
+                Data Sensitivity *
+                <select name="dataSensitivity" required>
+                  <option value="">Select one</option>
+                  <option value="public">Public</option>
+                  <option value="internal">Internal</option>
+                  <option value="confidential">Confidential</option>
+                  <option value="regulated">Regulated / PII</option>
+                </select>
+              </label>
+              <label>
+                Reference Link
+                <input name="referenceLink" type="url" placeholder="https://" />
+              </label>
+              <label class="full-width">
+                Additional Notes
+                <textarea name="notes" rows="3"></textarea>
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button type="submit">Preview Submission</button>
+            <button type="reset" class="ghost">Clear Form</button>
+          </div>
+          <p id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>

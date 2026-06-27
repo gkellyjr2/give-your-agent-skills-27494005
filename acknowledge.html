@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submission Acknowledgment</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain"></div>
+    <main class="shell">
+      <section class="hero">
+        <div class="brand-bar" aria-label="Company branding">
+          <img src="assets/company-logo.svg" alt="LinkedIn Learning Technology Intake logo" class="company-logo" />
+          <p class="brand-tagline">LinkedIn Learning project intake platform</p>
+        </div>
+        <p class="eyebrow">Acknowledgment</p>
+        <h1>Submission completed successfully.</h1>
+        <p class="hero-copy" id="ack-message"></p>
+      </section>
+
+      <section class="card" aria-labelledby="ack-title">
+        <div class="card-head">
+          <h2 id="ack-title">What would you like to do next?</h2>
+          <p>
+            Start a new intake request with a clean form, or close this app.
+          </p>
+        </div>
+
+        <div class="actions">
+          <button id="new-request" type="button">Submit Additional Request</button>
+          <button id="close-app" type="button" class="ghost">Close App</button>
+        </div>
+
+        <p id="ack-feedback" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+
+    <script src="acknowledge.js"></script>
+  </body>
+</html>

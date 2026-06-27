@@ -1,0 +1,37 @@
+{
+  "schemaVersion": "1.0.0",
+  "requestId": "abe4263c-90a4-4f19-89d9-8542e2b74b31",
+  "submittedAt": "2026-06-27T21:27:27.784Z",
+  "source": {
+    "channel": "project-intake-web",
+    "application": "give-your-agent-skills-27494005"
+  },
+  "requestor": {
+    "name": "Willy Lump-lump",
+    "email": "gkellyjr2sts@gmail.com",
+    "department": "Information Technology Services",
+    "role": "Project Manager"
+  },
+  "project": {
+    "title": "Linked Learning Skills 2",
+    "summary": "The following summary represents the project request",
+    "problemStatement": "The following represents the project request problem statement",
+    "desiredOutcome": "The following represents the project desired outcome",
+    "type": "enhancement",
+    "priority": "high",
+    "timeline": {
+      "desiredStartDate": "2026-07-06",
+      "desiredEndDate": "2026-10-22"
+    },
+    "budget": {
+      "estimateUsd": "35000"
+    },
+    "stakeholders": "Needham Parks",
+    "dependencies": "Lots of them",
+    "successMetrics": "Lots of them",
+    "risks": "Lots of them",
+    "dataSensitivity": "internal",
+    "referenceLink": "",
+    "notes": "None"
+  }
+}
